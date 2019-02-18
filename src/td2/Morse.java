@@ -28,7 +28,7 @@ public class Morse {
 		}
 		System.out.println(out);
 		
-		// En utilisant javap, on remarque que append est plus optimisé que +
+		// En utilisant javap, on remarque que append est plus optimisé que + et que le 2e est plus lourd
 	}
 
 }
