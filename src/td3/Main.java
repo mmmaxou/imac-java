@@ -11,6 +11,7 @@ public class Main {
 	/**
 	 * @param args
 	 */
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 
 		// 2.
@@ -48,6 +49,7 @@ public class Main {
 		
 		// Index of : Renvoi la 1e occurence d'un élément spécifié dans la liste ou -1 si il ne trouve pas
 		
+		@SuppressWarnings("rawtypes")
 		var list = new ArrayList();
 		list.add(b1);
 		System.out.println(list.indexOf(b2));

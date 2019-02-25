@@ -2,5 +2,4 @@
  * @author mpluchar
  *
  */
-module td {
-}
+package td5;
