@@ -7,9 +7,9 @@ package td6;
 public class Circle {
 	private Point center;
 
-	private int radius;
+	private double radius;
 	
-	public Circle(Point center, int radius) {
+	public Circle(Point center, double radius) {
 		this.center = new Point(center);
 		this.radius = radius;
 	}
@@ -37,6 +37,6 @@ public class Circle {
 		d1 = d1*d1;
 		d2 = d2*d2;
 		double distance = Math.sqrt(d1 + d2);
-		return distance < this.radius;
+		return distance <= this.radius;
 	}
 }
