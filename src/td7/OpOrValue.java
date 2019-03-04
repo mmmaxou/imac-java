@@ -40,6 +40,16 @@ public class OpOrValue {
 			return value;
 		}
 	}
+	
+	public boolean isOperation() {
+		return this.operator != OP_NONE;
+	}
+	
+	public String getOperator() {
+		if (this.operator == OP_NONE) return "null";
+		else if (this.operator == OP_ADD) return "+";
+		else return "-";
+	}
 
 	public static Node<OpOrValue> parse(Scanner scanner, Node<OpOrValue> node) {
 		boolean shallContinue = true;
@@ -75,8 +85,9 @@ public class OpOrValue {
 					System.out.println("Leaving");
 					return node;
 				}
-
-				node = new Node<OpOrValue>(new OpOrValue(0));
+				if (node == null ) {
+					node = new Node<OpOrValue>(new OpOrValue(0));
+				}
 				parse(scanner, node);
 				parse(scanner, node);
 				List<Node<OpOrValue>> children = node.getChildren();
@@ -89,35 +100,10 @@ public class OpOrValue {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				node = new Node<OpOrValue>(new OpOrValue(expression.eval()));
-				System.out.println("Node : " + node.getData().eval());
+				node.setData(new OpOrValue(expression.eval()));
 				return node;
 			}
 		}
 		return node;
-	}
-
-	public static void main(String[] args) {
-		/*
-		OpOrValue expression;
-		try {
-			expression = new OpOrValue(OP_ADD,
-					new OpOrValue(2),
-					new OpOrValue(3)
-					);
-			System.out.println(expression.eval());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		*/
-
-		// 1.
-		// Il est déclaré private car on ne souhaite pas qu'il soit appellé par l'utilisateur
-
-		Node<OpOrValue> root = null;
-		root = parse(new Scanner(System.in), root);
-		System.out.println("Root value : " + root.getData().eval());
-
 	}
 }
