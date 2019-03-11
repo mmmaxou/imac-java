@@ -30,15 +30,32 @@ public class Main {
 		// 1.
 		// Il est déclaré private car on ne souhaite pas qu'il soit appellé par l'utilisateur
 
+		/*
 		Node<OpOrValue> root = null;
 		root = OpOrValue.parse(new Scanner(System.in), root);
 		System.out.println("Root value : " + root.getData().eval());
 		printTree(root);
 
 		System.out.println("end");
+		*/
+		
+		// Exercice 2
+		// 1.
+		// Nouveau main :
+		Scanner scanner = new Scanner(System.in);
+		Value e = Value.parse(scanner);
+		System.out.println("e:" + e.eval());
+		Operation o = Operation.parse(scanner);
+		System.out.println("o:" + o.eval());
+		System.out.println("Tree for e :");
+		e.displayTree();
+		System.out.println("Tree for o :");
+		o.displayTree();
 	}
 	
 	private static void printTree(Node<OpOrValue> node) {
+		
+		System.out.println(node.getData().getOperator());
 	 
 		if (node.getData().isOperation()) {
 			System.out.print("(");
