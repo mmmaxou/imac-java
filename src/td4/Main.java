@@ -32,7 +32,7 @@ public class Main {
 	/**
 	 * @param args
 	 */
-	@SuppressWarnings({ "unused", "deprecation" })
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		System.out.println("Hello World");
 		//1. System.out.println();
@@ -43,8 +43,7 @@ public class Main {
 		int a = i + 4;
 		
 		// 7.
-		@SuppressWarnings("unused")
-		Integer integer = new Integer(2);
+		Integer integer = Integer.valueOf(2);
 		
 		// 8.
 		// Appuyer sur string en maintenant Ctrl ouvre la déclaration de String

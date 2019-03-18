@@ -53,6 +53,7 @@ public class Main {
 		o.displayTree();
 	}
 	
+	@SuppressWarnings("unused")
 	private static void printTree(Node<OpOrValue> node) {
 		
 		System.out.println(node.getData().getOperator());
