@@ -1,3 +1,3 @@
-# Coucou les imac 2 !
+# Salut les imac 2 !
 
-## Bonne chance pour le td4 <3
+##  Aller courage !! LE TD 5 est pas trop difficile o/ You can do it !!
